@@ -1,0 +1,22 @@
+# curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64
+# chmod +x ./kind
+# sudo mv ./kind /usr/local/bin/kind
+# kind --version
+
+# kind create cluster
+
+# kind get clusters
+kind
+kind-2
+
+In order to interact with a specific cluster, you only need to specify the cluster name as a context in kubectl:
+
+# kubectl cluster-info --context kind-kind
+# kubectl cluster-info --context kind-kind-2
+
+Deleting a Cluster
+
+If you created a cluster with kind create cluster then deleting is equally simple:
+
+# kind delete cluster
+# kubectl config --set-context kind-cka-cluster
