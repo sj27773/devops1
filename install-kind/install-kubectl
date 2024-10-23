@@ -1,0 +1,2 @@
+sudo apt update
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/     to install read this document
