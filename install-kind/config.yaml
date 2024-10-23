@@ -2,5 +2,10 @@ kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
 - role: control-plane
-- role: worker
-- role: worker
+  extraPortMappings:
+  # This maps containerPort 30001 (inside the kind cluster) to hostPort 30001 (on your local machine)
+  - containerPort: 30001
+    hostPort: 30001
+    protocol: TCP # Optionally specify the protocol (TCP is the default)
+- role: worker # First worker node
+- role: worker # Second worker node

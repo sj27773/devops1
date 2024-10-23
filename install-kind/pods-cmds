@@ -1,1 +1,5 @@
 # kubectl create -f pod.yaml
+# kubectl edit pod-name   # to edit pods 
+# kubectl exec -it nginx-pod --sh  # to enter in cont.
+# kubectl get pods -o wide 
+kubectl set images deploy/name of deployment\ nginx= new vwerion nginx kubectl rollout  history deploy/myapp
