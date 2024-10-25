@@ -1,0 +1,17 @@
+    kubectl taint nodes node1 key=gpu:NoSchedule
+    kubectl taint nodes node1 key=gpu:NoSchedule-
+    apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: redis
+  name: redis
+spec:
+  containers:
+  - image: redis
+    name: redis
+  tolerations:
+  - key: "gpu"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
